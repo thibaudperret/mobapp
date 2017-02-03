@@ -1,0 +1,96 @@
+<html>
+<head lang="en">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="http://cdn.jtsage.com/datebox/1.4.5/jqm-datebox-1.4.5.min.css" />
+	
+    <link type="text/css" href="css/demos.css" rel="stylesheet" />
+    <!-- NOTE: Script load order is significant! -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	
+    <script type="text/javascript" src="http://cdn.jtsage.com/external/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="http://dev.jtsage.com/jQM-DateBox/js/doc.js"></script>
+    <script type="text/javascript" src="http://cdn.jtsage.com/datebox/1.4.5/jqm-datebox-1.4.5.core.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jtsage.com/datebox/1.4.5/jqm-datebox-1.4.5.mode.calbox.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jtsage.com/datebox/i18n/jqm-datebox.lang.utf8.js"></script>
+    <script type="text/javascript">
+    jQuery.extend(jQuery.mobile,
+    {
+      ajaxEnabled: false
+    });
+    </script>
+	
+    <script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
+    <script src="../dist/locationpicker.jquery.min.js"></script>
+	
+	<title>Jobino</title>
+
+</head>
+<body>
+
+	<!----------------------- SEARCH PAGE ----------------------->
+	<div data-role="page" id="search">  
+		<div data-role="main" class="ui-content">
+			<form method="post" action="demoform.asp">
+				<input type="search" name="search" id="search" placeholder="What are you looking for ?"/>
+
+				<fieldset>
+					<label for="day">Category</label>
+					<select name="day" id="day" data-native-menu="false">
+					<option value="non">None</option>
+					<option value="edu">Education</option>
+					<option value="hou">House</option>
+					<option value="gar">Garden</option>
+					<option value="spo">Sport</option>
+					</select>
+				</fieldset>
+
+				<div data-role="rangeslider">
+					<label for="price">Price range</label>
+					<input name="price-min" id="price-min" min="0" max="500" value="0" type="range" />
+					<label for="price-max">Price range</label>
+					<input name="price-max" id="price-max" min="0" max="500" value="100" type="range" />
+				</div>
+
+				<label for="mode1">Date</label>
+				<input name="mode1" id="mode1" type="text" data-role="datebox" data-options='{"mode":"calbox"}' />
+
+				<label>Location</label>
+				<input type="text" class="form-control" id="loc-address"/>
+		
+				<div id="loc" style="height: 400"></div>
+				<script>
+					$('#loc').locationpicker({
+						location: {
+							latitude: 59.3325800,
+							longitude: 18.0649000
+						},
+						radius: 0,
+						inputBinding: {
+							locationNameInput: $('#loc-address')
+						},
+						enableAutocomplete: true
+					});
+				</script>
+
+				<input type="submit" data-inline="true" value="Submit">
+			</form>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="search.html"   rel="external" class="ui-btn ui-state-persist ui-btn-active" data-icon="search"></a></li>
+					<li><a href="add.html"      rel="external" data-icon="plus"></a></li>
+					<li><a href="messages.html" rel="external" data-icon="mail"></a></li>
+					<li><a href="profile.html"  rel="external" data-icon="user"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
