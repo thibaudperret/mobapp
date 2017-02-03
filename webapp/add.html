@@ -1,13 +1,41 @@
-<!DOCTYPE html>
 <html>
 <head>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="http://cdn.jtsage.com/datebox/1.4.5/jqm-datebox-1.4.5.min.css" />
+	
+    <link type="text/css" href="css/demos.css" rel="stylesheet" />
+	
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	
+    <script type="text/javascript" src="http://cdn.jtsage.com/external/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="http://dev.jtsage.com/jQM-DateBox/js/doc.js"></script>
+    <script type="text/javascript" src="http://cdn.jtsage.com/datebox/1.4.5/jqm-datebox-1.4.5.core.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jtsage.com/datebox/1.4.5/jqm-datebox-1.4.5.mode.calbox.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jtsage.com/datebox/i18n/jqm-datebox.lang.utf8.js"></script>
+    <script type="text/javascript">
+    jQuery.extend(jQuery.mobile,
+    {
+      ajaxEnabled: false
+    });
+    </script>
+	
+    <script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
+    <script src="../dist/locationpicker.jquery.min.js"></script>
 	
 	<title>Jobino</title>
+	
+	
+				
+				<script type="text/javascript">
+					function change() {
+						var x = document.getElementById("loc-radius").value;
+						document.getElementById("test").in = x;
+					}
+				</script>
 
 </head>
 
@@ -15,11 +43,64 @@
 	
 	<!----------------------- ADD PAGE ----------------------->
 	<div data-role="page" id="add">
-		<div data-role="header">
-			<h1>Add a new service</h1>
-		</div>
+		<div data-role="main" class="ui-content">
+			<form method="post" action="addform.asp">
+				<input type="text" name="search" id="text" placeholder="Insert the job label here"/>
+				
+				<label for="description">Description</label>
+				<textarea name="desciption" id="description" placeholder="Give a description about your service"></textarea>
 
-		<div data-role="footer" data-position="fixed">
+				
+				<label for="day">Category</label>
+				<select name="day" id="day" data-native-menu="false">
+					<option value="non">None</option>
+					<option value="edu">Education</option>
+					<option value="hou">House</option>
+					<option value="gar">Garden</option>
+					<option value="spo">Sport</option>
+				</select>
+
+				<label for="price">Price</label>
+				<input type="text" name="price" id="price" placeholder="Enter the price"/>
+
+				<label for="date">Date</label>
+				<input type="text" name="date" id="date" data-role="datebox" data-options='{"mode":"calbox"}' placeholder="Choose a date"/>
+				
+				<br/>
+
+				<label for="loc-address">Location</label>
+				<input type="text" id="loc-address"/>
+				
+				
+				<div data-role="rangeslider">
+					<label for="loc-radius">Radius</label>
+					<input type="range" name="loc-radius" id="loc-radius" min="0" max="2000" value="50"/>
+				</div>
+		
+				<div id="loc" style="height: 400"></div>
+				<script>
+				try {
+					$('#loc').locationpicker({
+						location: {
+							latitude: 59.3325800,
+							longitude: 18.0649000
+						},
+						inputBinding: {
+							radiusInput: $('#loc-address'),
+							locationNameInput: $('#loc-address')
+						},
+						enableAutocomplete: true,
+					});
+				} catch (err) {
+					alert('error');
+				}
+				</script>
+
+				<input type="submit" data-inline="true" value="Submit">
+			</form>
+		</div>
+	
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="search.html"   rel="external" data-icon="search"></a></li>

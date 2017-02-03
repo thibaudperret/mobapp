@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="http://cdn.jtsage.com/datebox/1.4.5/jqm-datebox-1.4.5.min.css" />
 	
     <link type="text/css" href="css/demos.css" rel="stylesheet" />
-    <!-- NOTE: Script load order is significant! -->
+	
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	
@@ -34,17 +34,17 @@
 	<!----------------------- SEARCH PAGE ----------------------->
 	<div data-role="page" id="search">  
 		<div data-role="main" class="ui-content">
-			<form method="post" action="demoform.asp">
+			<form method="post" action="searchform.asp">
 				<input type="search" name="search" id="search" placeholder="What are you looking for ?"/>
 
 				<fieldset>
 					<label for="day">Category</label>
 					<select name="day" id="day" data-native-menu="false">
-					<option value="non">None</option>
-					<option value="edu">Education</option>
-					<option value="hou">House</option>
-					<option value="gar">Garden</option>
-					<option value="spo">Sport</option>
+						<option value="non">None</option>
+						<option value="edu">Education</option>
+						<option value="hou">House</option>
+						<option value="gar">Garden</option>
+						<option value="spo">Sport</option>
 					</select>
 				</fieldset>
 
@@ -52,11 +52,11 @@
 					<label for="price">Price range</label>
 					<input name="price-min" id="price-min" min="0" max="500" value="0" type="range" />
 					<label for="price-max">Price range</label>
-					<input name="price-max" id="price-max" min="0" max="500" value="100" type="range" />
+					<input name="price-max" id="price-max" min="0" max="500" value="100" type="range"/>
 				</div>
 
-				<label for="mode1">Date</label>
-				<input name="mode1" id="mode1" type="text" data-role="datebox" data-options='{"mode":"calbox"}' />
+				<label for="date">Date</label>
+				<input name="date" id="date" type="text" data-role="datebox" data-options='{"mode":"calbox"}'/>
 
 				<label>Location</label>
 				<input type="text" class="form-control" id="loc-address"/>
@@ -80,7 +80,7 @@
 			</form>
 		</div>
 
-		<div data-role="footer" data-position="fixed">
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="search.html"   rel="external" class="ui-btn ui-state-persist ui-btn-active" data-icon="search"></a></li>
