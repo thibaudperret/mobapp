@@ -10,10 +10,21 @@
 
 <style>
 
-#circle {
+#bigCircle {
 	class: rounded;
     height: 200px;
     width: 200px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+#smallCircle {
+	class: rounded;
+    height: 75px;
+    width: 75px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
@@ -30,27 +41,76 @@
 	<!----------------------- PROFILE PAGE ----------------------->
 	<div data-role="page" id="profile">
 		<div data-role="main" class="ui-contain">
-			<center>
-				<img id="circle" src="profile1.jpg" />
-				<h1>John Smith, 24</h1>
-			</center>
+			<div data-role="header" data-position="fixed" data-tap-toggle="false">
+				<center>
+					<img id="bigCircle" src="profile.jpg" />
+					<h1>John Smith, 24</h1>
+				</center>
+			</div>
 			
 			<h2>Services:</h2>
-			<ul data-role="listview">
-				<li><a href="#" rel="external">Waiter</a></li>
-				<li><a href="#" rel="external">Programmer</a></li>
-				<li><a href="#" rel="external">Math Lessons</a></li>
-				<li><a href="#" rel="external">Babysitter</a></li>
+			<ul data-role="listview" data-inset="true">
+				<li>
+					<a href="#" rel="external">
+						<h2>Waiter</h2>
+						<p>I often work as a waiter in ...</p>
+					</a>
+				</li>
+				<li>
+					<a href="#" rel="external">
+						<h2>Programmer</h2>
+						<p>During my studies, I had to prog...</p>
+					</a>
+				</li>
+				<li>
+					<a href="#" rel="external">
+						<h2>Maths lessons</h2>
+						<p>I can give advanced maths less...</p>
+					</a>
+				</li>
+				<li>
+					<a href="#" rel="external">
+						<h2>Babysitter</h2>
+						<p>When I was younger, my paren...</p>
+					</a>
+				</li>
 			</ul>
+			
+			
+			<h2>Rating:  <img src="rating.jpg" width="200px" height="34px"/></h2>
+			
+			<div data-role="collapsible">
+				<h1>Comments on John:</h1>
+				
+			<ul data-role="listview">
+				<li>
+					<img id="smallCircle" src="profile.jpg"/>
+					<h2>Jean Dupond:</h2>
+					<p>John has done a very good job!! I would recommend him :)</p>
+				</li>
+				<li>
+					<img id="smallCircle" src="profile.jpg"/>
+					<h2>Ola Johansson:</h2>
+					<p>Good math lesson. Thank you!</p>
+				</li>
+				<li>
+					<img id="smallCircle" src="profile.jpg"/>
+					<h2>Erik Kristofferson:</h2>
+					<p>Nice job.</p>
+				</li>
+			</ul>
+			
+			</div>
+			
 		</div>
 
-		<div data-role="footer" data-position="fixed">
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="search.html"   rel="external" data-icon="search"></a></li>
 					<li><a href="add.html"      rel="external" data-icon="plus"></a></li>
 					<li><a href="messages.html" rel="external" data-icon="mail"></a></li>
-					<li><a href="profile.html"  rel="external" class="ui-btn ui-state-persist ui-btn-active" data-icon="user"></a></li>
+					<li><a href="#"  rel="external" class="ui-btn ui-state-persist ui-btn-active" data-icon="user"></a></li>
 				</ul>
 			</div>
 		</div>
