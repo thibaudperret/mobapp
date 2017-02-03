@@ -49,7 +49,6 @@
 				
 				<label for="description">Description</label>
 				<textarea name="desciption" id="description" placeholder="Give a description about your service"></textarea>
-
 				
 				<label for="day">Category</label>
 				<select name="day" id="day" data-native-menu="false">
@@ -71,29 +70,25 @@
 				<label for="loc-address">Location</label>
 				<input type="text" id="loc-address"/>
 				
-				
-				<div data-role="rangeslider">
+				<div data-role="field-contain" style="width: 80px">
 					<label for="loc-radius">Radius</label>
-					<input type="range" name="loc-radius" id="loc-radius" min="0" max="2000" value="50"/>
+					<input type="text" name="loc-radius" id="loc-radius"/>
 				</div>
 		
 				<div id="loc" style="height: 400"></div>
 				<script>
-				try {
 					$('#loc').locationpicker({
 						location: {
 							latitude: 59.3325800,
 							longitude: 18.0649000
 						},
+						radius: 200,
 						inputBinding: {
-							radiusInput: $('#loc-address'),
+							radiusInput: $('#loc-radius'),
 							locationNameInput: $('#loc-address')
 						},
 						enableAutocomplete: true,
 					});
-				} catch (err) {
-					alert('error');
-				}
 				</script>
 
 				<input type="submit" data-inline="true" value="Submit">
