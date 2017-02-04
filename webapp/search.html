@@ -1,5 +1,5 @@
 <html>
-<head lang="en">
+<head>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
@@ -34,12 +34,12 @@
 	<!----------------------- SEARCH PAGE ----------------------->
 	<div data-role="page" id="search">  
 		<div data-role="main" class="ui-content">
-			<form method="post" action="searchform.asp">
+			<form method="post" action="searchform.php">
 				<input type="search" name="search" id="search" placeholder="What are you looking for ?"/>
 
 				<fieldset>
-					<label for="day">Category</label>
-					<select name="day" id="day" data-native-menu="false">
+					<label for="category">Category</label>
+					<select name="category" id="category" data-native-menu="false">
 						<option value="non">None</option>
 						<option value="edu">Education</option>
 						<option value="hou">House</option>
@@ -49,7 +49,7 @@
 				</fieldset>
 
 				<div data-role="rangeslider">
-					<label for="price">Price range</label>
+					<label for="price-min">Price range</label>
 					<input name="price-min" id="price-min" min="0" max="500" value="0" type="range" />
 					<label for="price-max">Price range</label>
 					<input name="price-max" id="price-max" min="0" max="500" value="100" type="range"/>
@@ -59,7 +59,7 @@
 				<input name="date" id="date" type="text" data-role="datebox" data-options='{"mode":"calbox"}'/>
 
 				<label >Location</label>
-				<input type="text" class="form-control" id="loc-address" data-clear-btn="true"/>
+				<input name="loc-address" id="loc-address" type="text" class="form-control" data-clear-btn="true"/>
 		
 				<div id="loc" style="height: 400"></div>
 				<script>
