@@ -11,13 +11,12 @@
 			position: fixed;
 			top: 0;
 			width: 100%;
-			background-color: #f9f9f9;
+			background-color: #aaccff;
+			z-index: 1;
 		}
 		
 		.ui-my-free {
-			padding: 20px;
-			margin-top:3 0px;
-			height: 1500px;
+			margin-top: 115px;
 		}
 	</style>
 	
@@ -28,110 +27,32 @@
 <body>
 
 	<div data-role="page" id="home">
-		<div data-role="main" class="ui-content">
 			<div class="ui-content ui-my-fixed">
-				<h1>Search for</h1>
+				<h1>Search for <?php echo $_POST["search"]?></h1>
 			</div>
 			
-			<div class="ui-content ui-my-free">
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
-				<p>Test</p><br>
+		<div data-role="main">
+			<div class="ui-my-free">
+			
+				<div data-role="collapsibleset">
+					<div data-role="collapsible">
+						<h1>Thibaud Perret - <?php echo $_POST["search"]?> - 120 SEK/h</h1>
+						<p>I am a amateur <?php echo $_POST["search"]?> but I like it very much.</p>
+						<a href="" class="ui-btn">See Thibaud's whole post</a>
+					</div>
+					
+					<div data-role="collapsible">
+						<h1>Zijie Liang - <?php echo $_POST["search"]?> - <i>no price</i></h1>						
+						<p><i>No description given</i>.</p>
+						<a href="" class="ui-btn">See Zijie's whole post</a>
+					</div>
+					
+					<div data-role="collapsible">
+						<h1>Valentin Rigorsson - part time <?php echo $_POST["search"]?> - 210 SEK/h</h1>
+						<p>I have worked in the <?php echo $_POST["search"]?>'s business before so I have experience.</p>
+						<a href="" class="ui-btn">See Valentin's whole post</a>
+					</div>
+				</div>
 			</div>
 		</div>
 
